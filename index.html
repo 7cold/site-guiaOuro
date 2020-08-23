@@ -1,0 +1,259 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Cadastro de Notícia</h1>
+                <a href="">Consultar Noticia</a>
+
+                <form>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Titulo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="titulo">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Texto Noticia</span>
+                        </div>
+                        <textarea class="form-control" id="noticia" rows="14"></textarea>
+                    </div>
+
+                    </p>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Data</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control col-md-2" id="data">
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="">Cidade</label>
+                        </div>
+                        <select class="custom-select col-md-2" id="local">
+                            <option selected>Escolha</option>
+                            <option value="Ouro Fino">Ouro Fino</option>
+                            <option value="Inconfidentes">Inconfidentes</option>
+                            <option value="Jacutinga">Jacutinga</option>
+                            <option value="Monte Sião">Monte Sião</option>
+                            <option value="Borda da Mata">Borda da Mata</option>
+                            <option value="Bueno Brandão">Bueno Brandão</option>
+                            <option value="Andradas">Andradas</option>
+                            <option value="Pouso Alegre">Pouso Alegre</option>
+                            <option value="Zona Rural">Zona Rural</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="">Categoria</label>
+                        </div>
+                        <select class="custom-select col-md-2" id="categoria">
+                            <option selected>Escolha</option>
+                            <option value="cidade">Cidade</option>
+                            <option value="cultura">Cultura</option>
+                            <option value="denuncia">Denúncia</option>
+                            <option value="economia">Economia</option>
+                            <option value="educacao">Educação</option>
+                            <option value="esporte">Esporte</option>
+                            <option value="policia">Polícia</option>
+                            <option value="politica">Política</option>
+                            <option value="turismo">Turismo</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="">Fonte</label>
+                        </div>
+                        <select class="custom-select col-md-2" id="fonte">
+                            <option selected>Escolha</option>
+                            <option value="Observatório de Ouro Fino">Observatório de Ouro Fino</option>
+                            <option value="Difusora Ouro Fino">Difusora Ouro Fino</option>
+                            <option value="Jornal Folha de Ouro">Jornal Folha de Ouro</option>
+                            <option value="G1 Sul de Minas">G1 Sul de Minas</option>
+                            <option value="Tonogiro">Tonogiro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Link</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="link">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Link do YouTube</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="youtube" value="null">
+                        </div>
+                    </div>
+
+                    <div class="container bg-dark">
+                        <div class="form-group row pt-2">
+                            <label for="" class="col-sm-2 col-form-label text-white">Imagem Principal</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="imagePrincipalCampo" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-1">
+                            <div class="col-sm-10">
+                                <form enctype="multipart/form-data">
+                                    <input type="file" class="btn btn-light" id="imagePrincipal"
+                                        accept="image/*"><br><br>
+                                    <button type="button" class="btn btn-light mb-2"
+                                        onclick="uploadPrincipal()">Upload</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container bg-secondary">
+                        <div class="form-group row pt-2">
+                            <label for="" class="col-sm-2 col-form-label text-white">Photo 1</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="photo1Campo" value="null" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-1">
+                            <div class="col-sm-10">
+                                <form enctype="multipart/form-data">
+                                    <input type="file" class="btn btn-light" id="photo1" accept="imagePhoto1/*"><br><br>
+                                    <button type="button" class="btn btn-primary mb-2" onclick="uploadPhoto1()">Upload
+                                        Photo 1</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container bg-secondary">
+                        <div class="form-group row pt-2">
+                            <label for="" class="col-sm-2 col-form-label text-white">Photo 2</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="photo2Campo" value="null" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-1">
+                            <div class="col-sm-10">
+                                <form enctype="multipart/form-data">
+                                    <input type="file" class="btn btn-light" id="photo2" accept="imagePhoto2/*"><br><br>
+                                    <button type="button" class="btn btn-primary mb-2" onclick="uploadPhoto2()">Upload
+                                        Photo 2</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container bg-secondary">
+                        <div class="form-group row pt-2">
+                            <label for="" class="col-sm-2 col-form-label text-white">Photo 3</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="photo3Campo" value="null" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-1">
+                            <div class="col-sm-10">
+                                <form enctype="multipart/form-data">
+                                    <input type="file" class="btn btn-light" id="photo3" accept="imagePhoto3/*"><br><br>
+                                    <button type="button" class="btn btn-primary mb-2" onclick="uploadPhoto3()">Upload
+                                        Photo 3</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container bg-secondary">
+                        <div class="form-group row pt-2">
+                            <label for="" class="col-sm-2 col-form-label text-white">Photo 4</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="photo4Campo" value="null" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-1">
+                            <div class="col-sm-10">
+                                <form enctype="multipart/form-data">
+                                    <input type="file" class="btn btn-light" id="photo4" accept="imagePhoto4/*"><br><br>
+                                    <button type="button" class="btn btn-primary mb-2" onclick="uploadPhoto4()">Upload
+                                        Photo 4</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" id="submit_btn"
+                        onclick="storeData()">Salvar</button>
+
+                </form>
+
+                <a href="send_notify.php">Sms</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Conexao com firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+
+    <!-- Configuracao com firebase -->
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCDuqZA3JLbIgsef8Zb4fOygBGyQo1n8Tw",
+            authDomain: "testenoticias-461b1.firebaseapp.com",
+            databaseURL: "https://testenoticias-461b1.firebaseio.com",
+            projectId: "testenoticias-461b1",
+            storageBucket: "testenoticias-461b1.appspot.com",
+            messagingSenderId: "339453670405",
+            appId: "1:339453670405:web:615ee142d1dab26709586c"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- conexao com jquery e js -->
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+
+    <!-- date picker -->
+    <script>
+        $("#data").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
